@@ -1,0 +1,102 @@
+README
+
+------------
+- Authors: -
+------------
+
+	Cloud:
+
+		Derek Campaniello, Derek_Campaniello@student.uml.edu
+		Jonathan Wydola, Jonathan_Wydola@student.uml.edu
+
+	Sensor/Data Aggregator:
+
+		Michael Forsyth Michael_forsyth@student.uml.edu
+		James Kuczynski James_Kuczynski@student.uml.edu
+		NicholasForsyth Nicholas_Forsyth@student.uml.edu
+		Neel Tripathi Neel_Tripathi@student.uml.edu
+
+---------------------
+- Project Synopsis: -
+---------------------
+
+With the current obesity epidemic in America, it is more important then ever that people are made 
+conscious of the amount of exercise which they recieve. Therefore, this application keeps track of 
+the number of steps the user has walked. It displays this data both visually, and with a audio 
+interface. The data is then sent to a cloud server for future evaluation and visulization.
+
+--------------------------------------------------
+- Cloud Installation and Execution Instructions: -
+--------------------------------------------------
+
+1. Install a stable and reliable physical server or VPS environment with adequate hardware
+to handle tasks and a proper operating system environment.
+	a. If running a virtual environment on AWS. Please follow the following 
+	b. Create an EC2 instance with the proper system resources and operating system 
+	c. Apply security settings including opening inbound ports 80, 21, 443, 25 and 20.
+	d. Give the instance an elastic IP so that it retains its static IP after restart.
+2. Install desired HTTP server (i.e. Apache, nginx, etc...).
+3. Configure HTTP server to quality standards including adding SSL security to make a 
+proper HTTPS connection so data isn’t transmitted in plain text.
+4. Install PHP so that the system can function. 
+5. Install PHP MySql libraries. Do not use mysql functions to connect to the database as 
+these are deprecated and will be removed in a future version of PHP.
+6. Install and Configure a MySQL server. Be sure to set up proper security features such as 
+disabling root access from remote locations and giving passwords to MySQL users. Also, 
+add SSL security when communicating with MySQL server.
+7. Move PHP files in HTTP public folder to be displayed.
+8. Change config.php to personal database information.
+9. Import DBSchema.sql into MySQL database.
+
+-----------------------------------------------
+- To use existing instance on AWS EC2 Cloud : -
+-----------------------------------------------
+
+An existing development server has been create on AWS instance.
+
+To run it:
+
+1. Login to AWS
+2. Click EC2
+3. Click running instances
+4. In the filter by tags and attributes or search by keyword, type cloud and hit enter. 
+	a. Look for the name: Cloud Server - Group 1 - Software Engineering II - Fall 2015
+	b. Right click that result, go to instance state and choose start to turn it on.
+5. It will take a minute to boot, but once it is running you can access the site itself at: 
+http://se2dev.no-ip.org/ or http://52.4.149.112
+6. Username and password is currently "test" and "test".
+
+-------------------------------------------------------------------
+- Sensor/Data Aggregator Installation and Execution Instructions: -
+-------------------------------------------------------------------
+
+Dependencies: Android >= 4.4
+
+1. Download Java(SDK, JRE) from oracle website.
+2. Download Android Studio and its SDK.
+3. Open the "BatchStepSensor" in Android Studio (this is the final project). 
+Plug your Android device into the computer. Press the "Run" button, and select your device.
+4. When the app starts, a dialog will appear, requesting your username and password. 
+	a. IMPORTANT: Currently, the username and password are both "test". 
+	b. After logging in, you may now use the application.
+Optional Voice Control: Select "Speech Input" from the menu dialog, wait until you here a 
+beeping noise, then say "step count". A voice will tell you the current number of steps.
+
+--------------------------------------
+- Cloud Source Code can be found at: -
+--------------------------------------
+
+https://github.com/puzzledplane/SE2-Cloud
+
+-------------------------------------------------------
+- Sensor/Data Aggregator Source code can be found at: -
+-------------------------------------------------------
+
+https://github.com/DeepBlue14/SE2ProjectSensor
+
+-----------------------------------------------------------------------
+- Also, a standalone light-weight sensor application can be found at: -
+-----------------------------------------------------------------------
+
+https://github.com/mike01720/SE2ProjectSensor
+
